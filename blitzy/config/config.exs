@@ -10,7 +10,9 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :blitzy, key: :value
+config :blitzy, master_node: :"a@127.0.0.1"
+
+config :blitzy, slave_nodes: [:"b@127.0.0.1", :"c@127.0.0.1", :"d@127.0.0.1"]
 #
 # And access this configuration in your application as:
 #

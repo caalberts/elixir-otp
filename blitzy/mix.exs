@@ -7,6 +7,7 @@ defmodule Blitzy.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     escript: [main_module: Blitzy.CLI],
      deps: deps()]
   end
 
@@ -16,7 +17,7 @@ defmodule Blitzy.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [
-      # mod: {Blitzy, []},
+      mod: {Blitzy, []},
       extra_applications: [:logger, :httpoison, :timex]
     ]
   end
@@ -34,7 +35,7 @@ defmodule Blitzy.Mixfile do
     [
       {:httpoison, "~> 0.12.0"},
       {:timex, "~> 3.1"},
-      {:tzdata, "~> 0.5.12"}
+      {:tzdata, "~> 0.1.8", override: true}
     ]
   end
 end
